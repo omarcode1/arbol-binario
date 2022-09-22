@@ -44,7 +44,7 @@ public class ArbolCadenas {
     }
 
     private void insertar(Nodo padre, String valor) {
-        System.out.println("::: " + valor.compareTo(padre.getValor()));
+//        System.out.println("::: " + valor.compareTo(padre.getValor()));
         if (valor.compareTo(padre.getValor()) > 0) {
             if (padre.getDerecha() == null) {
                 padre.setDerecha(new Nodo(valor));
