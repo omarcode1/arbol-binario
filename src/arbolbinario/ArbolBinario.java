@@ -5,6 +5,8 @@
  */
 package arbolbinario;
 
+import java.util.Scanner;
+
 /**
  *
  * @author omarl
@@ -16,17 +18,47 @@ public class ArbolBinario {
      */
     public static void main(String[] args) {
         ArbolEnteros arbol = new ArbolEnteros();
-        arbol.insertar(1);
+          arbol.insertar(1);
         arbol.insertar(2);
         arbol.insertar(3);
         arbol.insertar(4);
         arbol.insertar(0);
-        System.out.println("Recorriendo inorden:");
-        arbol.inorden();
-        System.out.println("Recorriendo postorden:");
-        arbol.postorden();
-        System.out.println("Recorriendo preorden:");
-        arbol.preorden();
+        Scanner leer = new Scanner(System.in);
+        int opcionMenu = 0;
+        do {
+
+            System.out.println("\n\n");
+            System.out.println(" |                 MENÚ                         |");
+            System.out.println(" |----------------------|-----------------------|");
+            System.out.println(" | 1. Recorriendo inorden:    |");
+            System.out.println(" | 2. Recorriendo postorden:  |");
+            System.out.println(" | 3. Recorriendo preorden:   |");
+            System.out.println(" | 4. salir                   |");
+            System.out.println(" |----------------------|-----------------------|");
+            System.out.print(" Elija una Opción: ");
+            opcionMenu = leer.nextInt();
+            switch (opcionMenu) {
+                case 1:
+                    arbol.inorden();
+                    break;
+                case 2:
+                    arbol.postorden();
+                case 3:            
+                    arbol.preorden();
+                    break;
+                default:
+                    System.out.println("\n\n Opción no válida! \n");
+                    break;
+            }
+        } while (opcionMenu != 20);
+
+      
+//        System.out.println("Recorriendo inorden:");
+//        arbol.inorden();
+//        System.out.println("Recorriendo postorden:");
+//        arbol.postorden();
+//        System.out.println("Recorriendo preorden:");
+//        arbol.preorden();
         System.out.println(arbol.existe(1)); // true
         System.out.println(arbol.existe(7)); // false
         System.out.println(arbol.existe(0)); // true
